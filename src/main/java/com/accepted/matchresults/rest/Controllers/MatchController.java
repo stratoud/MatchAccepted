@@ -28,7 +28,7 @@ public class MatchController {
     @GetMapping(value = "/match/{id}")
     public Optional<MatchEntity> getMatchById(@PathVariable long id){
         System.out.println("getMatches print ");
-        return matchRepo.findById((long) id);
+        return matchRepo.findById(id);
     }
 
     @PostMapping(value = "/createMatch")
@@ -61,6 +61,6 @@ public class MatchController {
     @DeleteMapping(value = "/deleteMatch/{id}")
     public void deleteMatch(@PathVariable long id){
         System.out.println("delete Match");
-        matchRepo.deleteById((long) id);
+        matchRepo.deleteById(id);
     }
 }

@@ -18,15 +18,15 @@ public class MatchOddsController {
     private MatchOddsRepository matchOddsRepo;
 
     @GetMapping(value = "/allMatchOdds")
-    public List<MatchoddsEntity> getMatches(){
+    public List<MatchoddsEntity> getMatchOdds(){
         System.out.println("getMatches");
         return matchOddsRepo.findAll();
     }
 
     @GetMapping(value = "/matchOdds/{id}")
-    public Optional<MatchoddsEntity> getMatchById(@PathVariable long id){
+    public Optional<MatchoddsEntity> getMatchOddsById(@PathVariable long id){
         System.out.println("getMatches by Id");
-        return matchOddsRepo.findById((long) id);
+        return matchOddsRepo.findById(id);
     }
 
     @PostMapping(value = "/createMatchOdds")
@@ -50,8 +50,8 @@ public class MatchOddsController {
     }
 
     @DeleteMapping(value = "/deleteMatchOdds/{id}")
-    public void deleteMatchOdds(@PathVariable int id){
+    public void deleteMatchOdds(@PathVariable long id){
         System.out.println("delete Match");
-        matchOddsRepo.deleteById((long) id);
+        matchOddsRepo.deleteById(id);
     }
 }
